@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: matplotlib-hep
+Version: 0.1.0
+Summary: Module for making data analysis in High Energy Physics with Python more convenient
+Home-page: http://github.com/ibab/matplotlib-hep
+Author: Igor Babuschkin
+Author-email: igor@babuschk.in
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN

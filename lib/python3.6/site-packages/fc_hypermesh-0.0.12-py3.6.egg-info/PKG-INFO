@@ -1,0 +1,316 @@
+Metadata-Version: 1.1
+Name: fc-hypermesh
+Version: 0.0.12
+Summary: Generate conforming meshes of hypercubes, hyperrectangles or of any d-orthotopes by simplices or orthotopes with their m-faces
+Home-page: http://www.math.univ-paris13.fr/~cuvelier/software
+Author: Francois Cuvelier
+Author-email: cuvelier@math.univ-paris13.fr
+License: BSD
+Description: 
+        .. _fc-hypermesh: http://www.math.univ-paris13.fr/~cuvelier/software/Python/fc-hypermesh.html 
+           
+        .. _www.python.org: http://www.python.org/
+        
+        .. _Miniconda: https://conda.io/miniconda.html
+        
+        .. _Anaconda: https://www.anaconda.com
+        
+        .. _Canopy: https://www.enthought.com/product/canopy/
+        
+        .. _Mayavi: http://docs.enthought.com/mayavi/mayavi/
+        
+        .. _Matplotlib: https://matplotlib.org/
+            
+        .. _hypermesh-report:    https://hal.archives-ouvertes.fr/hal-01638329/file/hypermesh_0.1.1%20%281%29.pdf
+        
+        .. image:: http://www.math.univ-paris13.fr/~cuvelier/software/codes/Python/fc-hypermesh/pyfc-hypermeshv4_400.png
+          :width: 400px
+          :align: center
+        
+        The **fc\_hypermesh** Python package allows to generate conforming meshes
+        of hypercubes, hyperrectangles or of any d-orthotopes by simplices or orthotopes  with their m-faces
+           
+        
+           
+        Introduction:
+        ------------- 
+        
+        __ hypermesh-report_
+        
+        .. image:: http://www.math.univ-paris13.fr/~cuvelier/images/icons/HALv3_78x78.png
+           :target: https://hal.archives-ouvertes.fr/hal-01638329
+           :align: left
+           :alt: sysfs line plot
+           :width: 55px
+           
+        This implements `Vectorized algorithms for regular tessellations of d-orthotopes and theirfaces, Cuvelier F. and Scarella G., 2017`__
+           
+        .. _fc\_hypermesh Python package: http://www.math.univ-paris13.fr/~cuvelier/software/fc-hypermesh-Python.html
+           
+        More documentation is available on `fc\_hypermesh Python package`_ dedicated web page. 
+        
+        This package was tested under:
+        
+            - **CentOS 7**, **Fedora 27**
+               - with Python 2.7.14 compiled from source (www.python.org_)
+               - with Python 3.5.5 compiled from source (www.python.org_)
+               - with Python 3.6.4 compiled from source (www.python.org_)
+            - **MacOS High Sierra**
+               - with Miniconda_ Python 2.7 distribution
+               - with Miniconda_ Python 3.6 distribution
+            - **openSUSE Leap 42.3 7**
+               - with Python 2.7.14 compiled from source (www.python.org_)
+               - with Python 3.4.8 compiled from source (www.python.org_)
+               - with Python 3.5.5 compiled from source (www.python.org_)
+               - with Python 3.6.4 compiled from source (www.python.org_)
+            - **Ubuntu 14.04.5 LTS** 
+               - with Python 2.7 compiled from source (www.python.org_)
+               - with Python 3.6 compiled from source (www.python.org_)
+               - with Miniconda_ Python 2.7 distribution
+               - with Miniconda_ Python 3.6 distribution
+            - **Ubuntu 17.10** 
+               - with Python 2.7.14 compiled from source (www.python.org_)
+               - with Python 3.6.3 compiled from source (www.python.org_)
+               - with Python 3.6.4 compiled from source (www.python.org_)
+            - **Windows 10** 
+               - with Miniconda_ Python 2.7 distribution
+               - with Miniconda_ Python 3.6 distribution
+        
+        
+        Installation:
+        -------------
+        
+        The **fc\_hypermesh** Python package is available from the Python Package Index, so to install/upgrade simply type
+        
+        .. code:: 
+        
+            pip install fc_hypermesh -U
+            
+        Thereafter, it's possible to run one of the demo functions 
+        
+        .. code:: python
+        
+              import fc_hypermesh
+              fc_hypermesh.demos.demo01()
+        
+        Examples usage:
+        ---------------
+        
+        -  Meshing the rectangle [-1,1]x[0,1] by simplices with 12+1 points in
+           x-axis and 5+1 points in y-axis:
+        
+           .. code:: python
+        
+               from fc_hypermesh import OrthMesh
+               oTh=OrthMesh(2,[12,5],type='simplicial',box=[[-1,1],[0,1]])
+               print(oTh)
+        
+           The output of the ``print(oTh)`` command is::
+        
+              OrthMesh object 
+                    d : 2
+                Mesh  :  EltMesh object 
+                  type (str): simplicial
+                  type : 0
+                    d : 2
+                    m : 2
+                    q : (2,78)
+                    me : (3,120)
+        
+              Number of 1-faces : 4
+                [ 0] (type,nq,nme) : (simplicial,6,5)
+                [ 1] (type,nq,nme) : (simplicial,6,5)
+                [ 2] (type,nq,nme) : (simplicial,13,12)
+                [ 3] (type,nq,nme) : (simplicial,13,12)
+              Number of 0-faces : 4
+                [ 0] (type,nq,nme) : (simplicial,1,1)
+                [ 1] (type,nq,nme) : (simplicial,1,1)
+                [ 2] (type,nq,nme) : (simplicial,1,1)
+                [ 3] (type,nq,nme) : (simplicial,1,1)
+        
+           If ``matplotlib`` package is installed one can represent the mesh
+        
+           .. code:: python
+        
+                import matplotlib.pyplot as plt
+                plt.ion()
+                plt.figure(1)
+                oTh.plotmesh(legend=True)
+                plt.figure(2)
+                oTh.plotmesh(m=1,legend=True,linewidth=3)
+                plt.axis('off')
+                
+            
+        
+           .. |OrthMesh_2D_simplicial_fig1| image:: http://www.math.univ-paris13.fr/~cuvelier/software/codes/Python/fc-hypermesh/snapshots/OrthMesh_2D_simplicial_fig1_Python360.png
+              :width: 300
+              :align: middle
+              
+           .. |OrthMesh_2D_simplicial_fig2| image:: http://www.math.univ-paris13.fr/~cuvelier/software/codes/Python/fc-hypermesh/snapshots/OrthMesh_2D_simplicial_fig2_Python360.png
+              :width: 300
+              :align: middle
+              
+           +-------------------------------+-------------------------------+
+           | |OrthMesh_2D_simplicial_fig1| | |OrthMesh_2D_simplicial_fig2| |
+           +-------------------------------+-------------------------------+
+        
+        -  Meshing the rectangular cuboid [-1,1]x[0,1]x[0,2] by simplices with 11+1 points in
+           x-axis, 5+1 points in y-axis and 10+1 points in z-axis:
+        
+           .. code:: python
+        
+                from fc_hypermesh import OrthMesh
+                oTh=OrthMesh(3,[10,5,10],box=[[-1,1],[0,1],[0,2]])
+        
+           If ``matplotlib`` package is installed one can represent the mesh
+        
+           .. code:: python
+           
+                from fc_tools.graphics import set_axes_equal
+                import matplotlib.pyplot as plt
+                plt.ion()
+                plt.figure(1)
+                oTh.plotmesh(legend=True,linewidth=0.5)
+                set_axes_equal()
+                plt.figure(2)
+                oTh.plotmesh(m=2,legend=True,edgecolor=[0,0,0])
+                plt.axis('off')
+                set_axes_equal()
+                
+           .. |OrthMesh_3D_simplicial_fig1| image:: http://www.math.univ-paris13.fr/~cuvelier/software/codes/Python/fc-hypermesh/snapshots/OrthMesh_3D_simplicial_fig1_Python360.png
+              :width: 300
+              :align: middle
+              
+           .. |OrthMesh_3D_simplicial_fig2| image:: http://www.math.univ-paris13.fr/~cuvelier/software/codes/Python/fc-hypermesh/snapshots/OrthMesh_3D_simplicial_fig2_Python360.png
+              :width: 300
+              :align: middle
+              
+           +-------------------------------+-------------------------------+
+           | |OrthMesh_3D_simplicial_fig1| | |OrthMesh_3D_simplicial_fig2| |
+           +-------------------------------+-------------------------------+
+              
+        -  Meshing the rectangle [-1,1]x[0,1] by orthotopes with 12+1 points in
+           x-axis, 5+1 points in y-axis and 10+1 points in z-axis:
+        
+           .. code:: python
+        
+                from fc_hypermesh import OrthMesh
+                oTh=OrthMesh(2,[12,5],type='orthotope',box=[[-1,1],[0,1]])
+        
+           If ``matplotlib`` package is installed one can represent the mesh
+        
+           .. code:: python
+           
+                from fc_tools.graphics import set_axes_equal
+                import matplotlib.pyplot as plt
+                plt.ion()
+                plt.figure(1)
+                oTh.plotmesh(legend=True)
+                set_axes_equal()
+                plt.figure(2)
+                oTh.plotmesh(m=1,legend=True,linewidth=3)
+                plt.axis('off')
+                set_axes_equal()
+                
+           .. |OrthMesh_2D_orthotope_fig1| image:: http://www.math.univ-paris13.fr/~cuvelier/software/codes/Python/fc-hypermesh/snapshots/OrthMesh_2D_orthotope_fig1_Python360.png
+              :width: 300
+              :align: middle
+              
+           .. |OrthMesh_2D_orthotope_fig2| image:: http://www.math.univ-paris13.fr/~cuvelier/software/codes/Python/fc-hypermesh/snapshots/OrthMesh_2D_orthotope_fig2_Python360.png
+              :width: 300
+              :align: middle
+              
+           +------------------------------+------------------------------+
+           | |OrthMesh_2D_orthotope_fig1| | |OrthMesh_2D_orthotope_fig2| |
+           +------------------------------+------------------------------+
+              
+        -  Meshing the rectangular cuboid [-1,1]x[0,1]x[0,2] by orthotopes with 11+1 points in
+           x-axis, 5+1 points in y-axis and 10+1 points in z-axis:
+        
+           .. code:: python
+        
+                from fc_hypermesh import OrthMesh
+                oTh=OrthMesh(3,[10,5,10],type='orthotope', box=[[-1,1],[0,1],[0,2]])
+        
+           If ``matplotlib`` package is installed one can represent the mesh
+        
+           .. code:: python
+           
+                from fc_tools.graphics import set_axes_equal
+                import matplotlib.pyplot as plt
+                plt.ion()
+                plt.figure(1)
+                oTh.plotmesh(legend=True,linewidth=0.5)
+                set_axes_equal()
+                plt.figure(2)
+                oTh.plotmesh(m=2,legend=True,edgecolor=[0,0,0])
+                plt.axis('off')
+                set_axes_equal()
+                
+           .. |OrthMesh_3D_orthotope_fig1| image:: http://www.math.univ-paris13.fr/~cuvelier/software/codes/Python/fc-hypermesh/snapshots/OrthMesh_3D_orthotope_fig1_Python360.png
+              :width: 300
+              :align: middle
+              
+           .. |OrthMesh_3D_orthotope_fig2| image:: http://www.math.univ-paris13.fr/~cuvelier/software/codes/Python/fc-hypermesh/snapshots/OrthMesh_3D_orthotope_fig2_Python360.png
+              :width: 300
+              :align: middle
+              
+           +------------------------------+------------------------------+
+           | |OrthMesh_3D_orthotope_fig1| | |OrthMesh_3D_orthotope_fig2| |
+           +------------------------------+------------------------------+
+              
+        Testing :
+        ---------      
+          There are seven demos functions in the ``fc_hypermesh`` package named ``demo01`` to ``demo07``.
+          The source code is in module ``demos.py``.
+          For example, run the following code under Python:
+          
+          .. code:: python
+          
+              import fc_hypermesh
+              fc_hypermesh.demo01()
+                
+        Benchmarking:
+        -------------
+        
+          .. code:: python
+          
+              import fc_hypermesh
+              fc_hypermesh.bench_gen(3,'simplicial',[[-1,1],[-1,1],[-1,1]],range(20,170,20))
+              
+          The output of this code is::
+        
+              # BENCH in dimension 3 with simplicial mesh
+              #d: 3
+              #type: simplicial
+              #box: [[-1, 1], [-1, 1], [-1, 1]]
+              #desc:  N        nq       nme    time(s)
+                    20      9261     48000     0.214
+                    40     68921    384000     0.211
+                    60    226981   1296000     0.274
+                    80    531441   3072000     0.363
+                    100   1030301   6000000     0.492
+                    120   1771561  10368000     0.679
+                    140   2803221  16464000     0.951
+                    160   4173281  24576000     1.323    
+          
+          .. code:: python
+          
+              import fc_hypermesh
+              fc_hypermesh.bench_gen(5,'orthotope',[[-1,1],[-1,1],[-1,1],[-1,1],[-1,1]],[5,10,15,20,25,27])
+              
+          The output of this code is::        
+          
+              # BENCH in dimension 5 with orthotope mesh
+              #d: 5
+              #type: orthotope
+              #box: [[-1, 1], [-1, 1], [-1, 1], [-1, 1], [-1, 1]]
+              #desc:  N        nq       nme    time(s)
+                      5      7776      3125     0.468
+                    10    161051    100000     0.512
+                    15   1048576    759375     0.738
+                    20   4084101   3200000     1.223
+                    25  11881376   9765625     2.542
+                    27  17210368  14348907     3.350
+Platform: UNKNOWN
+Classifier: Topic :: Scientific/Engineering :: Mathematics

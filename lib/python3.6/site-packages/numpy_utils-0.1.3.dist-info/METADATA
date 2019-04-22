@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: numpy-utils
+Version: 0.1.3
+Summary: NumPy utilities.
+Home-page: https://github.com/deluccial/numpy_utils.git
+Author: Luke DeLuccia
+Author-email: deluccial@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: numpy
+
+Provides general NumPy utilities for the modern-day programmer.
+
+`pip install numpy_utils`
+

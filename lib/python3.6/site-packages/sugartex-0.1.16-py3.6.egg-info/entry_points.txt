@@ -1,0 +1,4 @@
+[console_scripts]
+pre-sugartex = sugartex.pre_sugartex:main
+sugartex = sugartex.sugartex_pandoc_filter:cli
+

@@ -1,0 +1,19 @@
+Metadata-Version: 1.1
+Name: numpy-display
+Version: 1.2.0
+Summary: Formats numpy matrices in an IPython Notebook
+Home-page: https://github.com/PetterS/numpy_display
+Author: Petter Strandmark
+Author-email: petter.strandmark@gmail.com
+License: Public Domain
+Description: UNKNOWN
+Keywords: ipython,notebook,numpy
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Other Environment
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: License :: Public Domain
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Text Processing :: Markup :: HTML
+Classifier: Topic :: Scientific/Engineering

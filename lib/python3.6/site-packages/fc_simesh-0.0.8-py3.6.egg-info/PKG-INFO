@@ -1,0 +1,11 @@
+Metadata-Version: 1.1
+Name: fc-simesh
+Version: 0.0.8
+Summary: The fc_simesh package contains the siMesh class which allows to use simplices meshes generated from gmsh (in dimension 2 or 3) or an hypercube triangulation (in any dimension).
+Home-page: http://www.math.univ-paris13.fr/~cuvelier/software
+Author: Francois Cuvelier
+Author-email: cuvelier@math.univ-paris13.fr
+License: BSD
+Description: UNKNOWN
+Platform: Linux
+Classifier: Topic :: Scientific/Engineering

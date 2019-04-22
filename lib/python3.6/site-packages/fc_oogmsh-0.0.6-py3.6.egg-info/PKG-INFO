@@ -1,0 +1,184 @@
+Metadata-Version: 1.1
+Name: fc-oogmsh
+Version: 0.0.6
+Summary: Generate and read mesh files by using gmsh and given .geo files
+Home-page: http://www.math.univ-paris13.fr/~cuvelier/software
+Author: Francois Cuvelier
+Author-email: cuvelier@math.univ-paris13.fr
+License: BSD
+Description: .. _gmsh: http://gmsh.info
+           
+        .. _fc-oogmsh: http://www.math.univ-paris13.fr/~cuvelier/software/fc-oogmsh-Python.html
+           
+        .. _www.python.org: http://www.python.org/
+        
+        .. _python: http://www.python.org/
+           
+        .. _Anaconda: https://www.anaconda.com
+        
+        .. _Miniconda: https://conda.io/miniconda.html
+        
+        .. _Canopy: https://www.enthought.com/product/canopy/
+        
+        .. image:: http://www.math.univ-paris13.fr/~cuvelier/software/codes/Python/fc-oogmsh/pyfc-oogmshv3_400.png
+           :width: 200px
+           :align: left
+        
+        The **fc\_oogmsh** Python package make it possible to generate mesh files from 
+        *.geo* file by using `gmsh`_ which must be installed. It's also possible
+        with the ``ooGmsh`` class to read the mesh file and to store its contains in more user-friendly form. 
+        This package must be regarded as a very simple interface between gmsh files and Python. 
+        So you are free to create any objects you want from an ``ooGmsh`` object.
+        
+           
+        .. csv-table:: Package test on
+           :header: "System", "Python", `gmsh`_
+           :widths: 12, 12, 12
+        
+        
+           **Ubuntu 18.04**, "2,7.15, 3.5.6, 3.6.6, 3.7.0 (`python`_)", "from 3.0.0 to 4.0.1"
+           **Windows 10**, "2,7.15, 3.5.6, 3.6.6, 3.7.0 (`python`_)", "from 3.0.0 to 4.0.1"
+           **MacOS High Sierra**, "2.7.15, 3.5.4, 3.6.6, 3.7.0 (`python`_)", "from 3.0.0 to 4.0.1"
+                                , "2.7.15, 3.7.0 (`Miniconda`_)", "from 3.0.0 to 4.0.1"
+           
+        
+        Documentation is available on `fc-oogmsh`_ dedicated web page.
+        
+        Installation:
+        -------------
+        
+        The **fc\_oogmsh** Python package is available from the Python Package Index, so to install/upgrade simply type
+        
+        .. code:: 
+        
+            pip install fc_oogmsh -U
+            
+        Configuration:
+        --------------
+        
+        One have to configure the package for using with `gmsh`_.
+        For the default configuration we run under Python:
+        
+        .. code:: python
+        
+            import fc_oogmsh
+            fc_oogmsh.configure()
+            
+        The function ``fc_oogmsh.configure()`` try to guess where is the **gmsh** binary. 
+        If this command failed or if we want to specify the **gmsh** binary location, one can use the
+        ``gmsh`` option to specify the **gmsh** binary file with full path.
+        
+        - For example, under Linux:
+        
+          .. code:: python
+        
+              import fc_oogmsh
+              fc_oogmsh.configure(gmsh='/usr/local/GMSH/gmsh-3.0.4-Linux/bin/gmsh')
+              
+        - For example,  under Windows:
+        
+          .. code:: python
+          
+              import fc_oogmsh
+              fc_oogmsh.configure(gmsh='C:\Users\toto\GMSH\gmsh-3.0.4-Windows/gmsh.exe')
+              
+        - For example,  under MacOS:
+        
+          .. code:: python
+          
+              import fc_oogmsh
+              fc_oogmsh.configure(gmsh='/Users/toto/GMSH/3.0.4/Gmsh.app/Contents/MacOS/gmsh')
+              
+        Now, it's possible to run one of the demo functions 
+        
+        .. code:: python
+        
+              import fc_oogmsh
+              fc_oogmsh.demo02()
+              
+        The output of the ``demo02()`` function under Linux is::
+        
+              ***********************
+              Running demo02 function
+              ***********************
+              *** Build mesh file
+              [fc_oogmsh] Using input file: <...>/geodir/2d/condenser11.geo
+              [fc_oogmsh] Overwritting mesh file <...>/.local/share/fc_oogmsh/meshes/condenser11-25.msh
+              [fc_oogmsh] Running gmsh. Be patient... Use option verbose=3 to see gmsh output
+              *** Read mesh file
+              *** Print oGh ->
+              ooGmsh object 
+                  dim : 2
+                types : [1 2]
+              orders : [1]
+                  nq : 3474
+                    q : ndarray object[float64], size (3474, 2)
+              toGlobal: ndarray object[int64], size (3474,)
+                sElts : list of 2 elements
+              *** Print oGh.sElts[0] ->
+              Elt object 
+                    d : 1, type : 1, order : 1
+                  geo : line
+                  nme : 360
+                  me : ndarray object[int64], size (2, 360)
+              phys_lab: ndarray object[int64], size (360,)
+              geo_lab : ndarray object[int64], size (360,)
+              part_lab: list of 360 elements
+              nb_parts: ndarray object[int64], size (360,)
+                nTags : list of 0 elements
+        
+        
+        Examples usage:
+        ---------------
+        
+        -  We use the geometry file ``condenser11.geo`` given with the package to generate a 2D mesh file
+        
+           .. code:: python
+           
+               meshfile=fc_oogmsh.buildmesh2d('condenser11',25,force=True)
+               
+        
+           The output of this command is::
+           
+              [fc_oogmsh] Using input file: <...>/python/fc_oogmsh/geodir/2d/condenser11.geo
+              [fc_oogmsh] Overwritting mesh file /home/toto/.local/share/fc_oogmsh/meshes/condenser11-25.msh
+              [fc_oogmsh] Running gmsh. Be patient... Use option verbose=3 to see gmsh output
+        
+              
+           Thereafter one can read the mesh file by using the  ``ooGmsh`` object constructor and print some 
+           informations
+           
+           .. code:: python
+           
+               oGh=fc_oogmsh.ooGmsh(meshfile)
+               print('*** Print oGh ->')
+               print(oGh)
+               print('*** Print oGh.sElts[0] ->')
+               print(oGh.sElts[0])
+                
+           The output of these commands are::
+            
+                *** Print oGh ->
+                ooGmsh object 
+                    dim : 2
+                  types : [1 2]
+                orders : [1]
+                    nq : 3474
+                      q : ndarray object[float64], size (3474, 2)
+                toGlobal: ndarray object[int64], size (3474,)
+                  sElts : list of 2 elements
+                *** Print oGh.sElts[0] ->
+                Elt object 
+                      d : 1, type : 1, order : 1
+                    geo : line
+                    nme : 360
+                    me : ndarray object[int64], size (2, 360)
+                phys_lab: ndarray object[int64], size (360,)
+                geo_lab : ndarray object[int64], size (360,)
+                part_lab: list of 360 elements
+                nb_parts: ndarray object[int64], size (360,)
+                  nTags : list of 0 elements
+        
+        
+Platform: Linux
+Classifier: Topic :: Scientific/Engineering

@@ -1,0 +1,11 @@
+README.md
+setup.cfg
+setup.py
+matplotlib_venn_wordcloud/__init__.py
+matplotlib_venn_wordcloud/_main.py
+matplotlib_venn_wordcloud/examples.py
+matplotlib_venn_wordcloud.egg-info/PKG-INFO
+matplotlib_venn_wordcloud.egg-info/SOURCES.txt
+matplotlib_venn_wordcloud.egg-info/dependency_links.txt
+matplotlib_venn_wordcloud.egg-info/requires.txt
+matplotlib_venn_wordcloud.egg-info/top_level.txt

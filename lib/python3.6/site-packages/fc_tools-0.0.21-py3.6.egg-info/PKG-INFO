@@ -1,0 +1,75 @@
+Metadata-Version: 1.1
+Name: fc-tools
+Version: 0.0.21
+Summary: Some functions used in fc_hypermesh, fc_bench, fc_simesh, ... packages
+Home-page: http://www.math.univ-paris13.fr/~cuvelier/software
+Author: Francois Cuvelier
+Author-email: cuvelier@math.univ-paris13.fr
+License: BSD
+Description: .. _fc-bench: http://www.math.univ-paris13.fr/~cuvelier/software/Python/fc-bench.html
+        
+        .. _fc-tools: http://www.math.univ-paris13.fr/~cuvelier/software/Python/fc-tools.html
+        
+        .. _fc-matplotlib4mesh: http://www.math.univ-paris13.fr/~cuvelier/software/Python/fc-matplotlib4mesh.html
+        
+        .. _fc-mayavi4mesh: http://www.math.univ-paris13.fr/~cuvelier/software/Python/fc-mayavi4mesh.html 
+        
+        .. _fc-oogmsh: http://www.math.univ-paris13.fr/~cuvelier/software/fc-oogmsh-Python.html 
+        
+        .. _fc-hypermesh: http://www.math.univ-paris13.fr/~cuvelier/software/fc-hypermesh-Python.html 
+        
+        .. _fc-simesh: http://www.math.univ-paris13.fr/~cuvelier/software/fc-simesh-Python.html
+        
+        .. _fc-simesh-matplotlib: http://www.math.univ-paris13.fr/~cuvelier/software/Python/fc-simesh-matplotlib.html 
+           
+        .. _fc-simesh-mayavi: http://www.math.univ-paris13.fr/~cuvelier/software/Python/fc-simesh-mayavi.html 
+        
+        .. _fc-vfemp1: http://www.math.univ-paris13.fr/~cuvelier/software/Python/fc-vfemp1.html 
+        
+        .. image:: http://www.math.univ-paris13.fr/~cuvelier/software/codes/Python/fc-tools/pyfc-tools_400.png
+          :width: 400px
+          :align: center
+        
+        The **fc\_tools** Python package contains some functions used in various packages I develop : `fc-oogmsh`_, `fc-hypermesh`_, `fc-matplotlib4mesh`_, `fc-mayavi4mesh`_, `fc-simesh`_, `fc-simesh-matplotlib`_, `fc-simesh-mayavi`_, `fc-vfemp1`_ ...
+           
+        Description:
+        ------------   
+        
+        The **fc\_tools** Python package contains some modules:
+          
+          - **colors** module with the main functions:
+          
+            - ``selectColors``: pick colors that are maximally perceptually distinct,
+            - ``str2rgb``: get RGB color triple from X11, svg or Matlab colors name.
+             
+          - **Matplotlib** module with the main  functions:
+          
+            - ``set_axes_equal`` : make axes of 3D plot have equal scale ,
+            - ``DisplayFigures``: distributes and resizes a set of figures on screen,
+            - ``SaveAllFigsAsFiles``: Save all matplotlib figures as files.
+            
+          - **Mayavi** module with the main function:
+          
+            - ``vtk_SaveAllFigsAsFiles``: Save all Mayavi figures as files.
+            
+          - **Sys** module with the main functions:
+          
+            - ``getArch``: get system architecture (Windows, Linux, MacOS)
+            - ``getOSinfo``: returns dictionary containing informations on the operating system
+            - ``getRAM``:  returns the RAM in Mo
+            - ``getCPUinfo``: returns dictionary containing informations on the CPU
+          
+        
+        
+        Installation:
+        -------------
+        
+        The **fc\_tools** Python package is available from the Python Package Index, so to install/upgrade simply type
+        
+        .. code:: 
+        
+            pip install fc_tools -U
+            
+        
+Platform: UNKNOWN
+Classifier: Topic :: Scientific/Engineering :: Mathematics

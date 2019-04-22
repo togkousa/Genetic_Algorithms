@@ -1,0 +1,23 @@
+Metadata-Version: 2.0
+Name: matplotlib-iterm2
+Version: 0.1.0
+Summary: iTerm2 exterimental backend for matplotlib
+Home-page: https://github.com/oselivanov/matplotlib_iterm2
+Author: Oleg Selivanov
+Author-email: oleg.a.selivanov@gmail.com
+License: MIT
+Keywords: ipython iterm2 matplotlib backend
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Visualization
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Requires-Dist: ipython
+Requires-Dist: matplotlib
+Requires-Dist: pillow
+
+iTerm2 exterimental backend for matplotlib uses displaying images iterm2 nightly build feature
+
+

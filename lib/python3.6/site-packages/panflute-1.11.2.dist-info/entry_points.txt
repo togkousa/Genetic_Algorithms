@@ -1,0 +1,4 @@
+[console_scripts]
+panfl = panflute:panfl
+panflute = panflute:main
+

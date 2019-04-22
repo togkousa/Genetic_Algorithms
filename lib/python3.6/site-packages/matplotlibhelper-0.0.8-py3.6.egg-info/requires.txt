@@ -1,0 +1,5 @@
+numpy
+pandas
+ipython
+sugartex>=0.1.16
+matplotlib

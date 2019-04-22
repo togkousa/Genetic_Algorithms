@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: japanize-matplotlib
+Version: 1.0.4
+Summary: matplotlibのフォント設定を自動で日本語化する
+Home-page: https://github.com/uehara1414/japanize-matplotlib
+Author: uehara1414
+Author-email: akiya.noface@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN

@@ -1,0 +1,19 @@
+Metadata-Version: 1.1
+Name: matplotlib-venn-wordcloud
+Version: 0.2.2
+Summary: Create a Venn diagram with word clouds corresponding to each subset.
+Home-page: https://github.com/paulbrodersen/matplotlib_venn_wordcloud
+Author: Paul Brodersen
+Author-email: paulbrodersen+matplotlib_venn_wordcloud@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/paulbrodersen/matplotlib_venn_wordcloud/archive/0.2.2.tar.gz
+Description: UNKNOWN
+Keywords: matplotlib,venn,wordcloud
+Platform: Platform Independent
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Scientific/Engineering :: Visualization

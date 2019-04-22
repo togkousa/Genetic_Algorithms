@@ -1,0 +1,11 @@
+Metadata-Version: 1.1
+Name: fc-simesh-matplotlib
+Version: 0.0.3
+Summary: Matplotlib add-on to the fc_simesh package
+Home-page: http://www.math.univ-paris13.fr/~cuvelier/software
+Author: Francois Cuvelier
+Author-email: cuvelier@math.univ-paris13.fr
+License: BSD
+Description: UNKNOWN
+Platform: Linux
+Classifier: Topic :: Scientific/Engineering
